@@ -1,0 +1,55 @@
+{
+  "name": "todo",
+  "version": "1.0.0",
+  "description": "a simple todo app with Mern stack",
+  "main": "server.js",
+  "scripts": {
+    "client": "npm run start --prefix client",
+    "dev": "concurrently \"npm run client\" \"nodemon server.js\"",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client"
+  },
+  "author": "avinash",
+  "license": "ISC",
+  "dependencies": {
+    "client": "0.0.1",
+    "cors": "^2.8.5",
+    "create-react-app": "^3.4.1",
+    "express": "^4.17.1",
+    "mongoose": "^5.10.7",
+    "nodemon": "^2.0.4"
+  },
+  "devDependencies": {
+    "concurrently": "^5.3.0"
+  }
+}
+
+
+
+#NPM_CONFIG_PRODUCTION
+
+{
+  "name": "todo",
+  "version": "1.0.0",
+  "description": "a simple todo app with Mern stack",
+  "main": "server.js",
+  "scripts": {
+    "server": "node server.js",
+    "client": "npm run start --prefix client",
+    "dev": "concurrently \"npm run client\" \"nodemon server.js\"",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client"
+  },
+  "author": "avinash",
+  "license": "ISC",
+  "dependencies": {
+    "client": "0.0.1",
+    "cors": "^2.8.5",
+    "create-react-app": "^3.4.1",
+    "express": "^4.17.1",
+    "mongoose": "^5.10.7",
+    "nodemon": "^2.0.4"
+  },
+  "devDependencies": {
+    "concurrently": "^5.3.0"
+  }
+}
+
