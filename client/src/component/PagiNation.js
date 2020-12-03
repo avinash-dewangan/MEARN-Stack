@@ -29,7 +29,6 @@ const PagiNation = () => {
                     }
                 </div>
             </div>
-            <Page showPerPage={showPerPage} />
         </div>
     );
 }
