@@ -1,31 +1,23 @@
 const express = require('express');
 const router = express.Router();
-
+var checkAuth = require("../api/middleware/auth");
 
 //import model
-const Todo = require("../models/todo");
+//const Todo = require("../models/todo");
+const todoController = require("../api/controller/todo");
+
 
 //Data Listing
-router.get('/', (req, res) => {
-    Todo.find()
-        .sort({ date: -1 })
-        .then((todos) => res.json(todos))
-});
+router.get('/:id', checkAuth, todoController.getAllTodos);
 
 //Add the data
-router.post('/', (req, res) => {
-    const newTodo = new Todo({
-        name: req.body.name
-    })
-    newTodo.save().then((todo) => res.json(todo))
-})
+router.post('/', checkAuth, todoController.addTodo);
 
 //Delete The Data
-router.delete('/:id', (req, res) => {
-    Todo.findById(req.params.id)
-        .then((todo) => todo.remove().then(() => res.json({ success: true })))
-        .catch(err => res.json({ success: false }).status(404))
-})
+router.delete('/:id', checkAuth, todoController.deleteTodo);
 
+
+//Data Listing
+router.get('/:id', checkAuth, todoController.findByIdTodo);
 
 module.exports = router;

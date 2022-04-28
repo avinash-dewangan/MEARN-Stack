@@ -5,7 +5,11 @@ const Schema = mongoose.Schema
 const totoSchema = new Schema({
     name: {
         type: String,
-        requireed: true
+        required: true
+    },
+    user_id: {
+        type: String,
+        required: true
     },
     added_date: {
         type: Date,
