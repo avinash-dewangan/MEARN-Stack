@@ -1,4 +1,4 @@
-const Todo = require("../../models/todo");
+const Todo = require("../models/todo");
 
 exports.getAllTodos = (req, res) => {
     var id = req.params.id;
@@ -15,11 +15,14 @@ exports.addTodo = (req, res, next) => {
 
     const newTodo = new Todo({
         name: req.body.name,
-        user_id: req.body.user_id
+        user_id:new Date()
     })
     //newTodo.save().then((todo) => res.json(todo))
     newTodo.save()
-        .then((todo) => res.json(todo))
+        .then((todo) =>{
+           console.log(result)
+           res.json(todo);
+        } )
         .catch(err => {
             res.json(err);
         });

@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import { Button, Table } from 'react-bootstrap';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import { getTodo, deleteTodo, addTodo } from '../actions/todoActions';
-
+import { getTodo, deleteTodo, addTodo } from '../redux/todo/todoActions';
+//import { getTodo, deleteTodo, addTodo } from '../redux/todo/types'
 
 
 class Todo extends Component {
